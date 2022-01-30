@@ -3,4 +3,4 @@ numpy==1.17.3
 tqdm==4.48.2
 scikit-learn==1.0.2
 scikit-image==0.16.2
-image-embeddings==1.4.0
+pillow==7.2.0
