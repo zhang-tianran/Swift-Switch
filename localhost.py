@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from flask import jsonify
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 import cv_model.query
 import scrape_thredup
 
@@ -37,9 +39,15 @@ def query():
     #     "3brand": c_brand,
     #     "3title": c_title})
     [[a, b, c]] = cv_model.query.query(url)
-    (a_size, a_price, a_brand, a_title) = scrape_thredup.get_size_price_brand(a[0])
-    (b_size, b_price, b_brand, b_title) = scrape_thredup.get_size_price_brand(b[0])
-    (c_size, c_price, c_brand, c_title) = scrape_thredup.get_size_price_brand(c[0])
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    driver = webdriver.Chrome(options=options)
+    (a_size, a_price, a_brand, a_title) = scrape_thredup.get_size_price_brand(driver, a[0])
+    (b_size, b_price, b_brand, b_title) = scrape_thredup.get_size_price_brand(driver, b[0])
+    (c_size, c_price, c_brand, c_title) = scrape_thredup.get_size_price_brand(driver, c[0])
+    driver.quit()
     return jsonify(
         {"1link": a[0],
         "1img": a[1],

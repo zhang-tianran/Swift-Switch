@@ -26,12 +26,7 @@ def get_pages(driver, URL):
 
     return urls
 
-def get_size_price_brand(url):
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option('useAutomationExtension', False)
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    driver = webdriver.Chrome(options=options)
+def get_size_price_brand(driver, url):
     driver.get(url)
     # size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].get_attribute('innerHTML')
     # price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].get_attribute('innerHTML')
