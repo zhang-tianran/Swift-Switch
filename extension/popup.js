@@ -61,7 +61,7 @@ getSource(function(src) {
         ul[i].innerHTML += ('<li><b>Brand: </b>'+ response[i+'brand'] +'</li>');
         ul[i].innerHTML += ('<li><b>Price: </b>'+ response[i+'prize'] +'</li>');
         ul[i].innerHTML += ('<li><b>Size: </b>'+ response[i+'size'] +'</li>');
-        link[i].href = (response[i+'link]');
+        link[i].href = (response[i+'link']);
         }
 
         // title[i].innerHTML += (response[i+'title']);

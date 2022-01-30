@@ -1,4 +1,4 @@
-import functions
+import cv_model.functions as functions
 import urllib.error
 
 def query(input_url : str) -> list:
