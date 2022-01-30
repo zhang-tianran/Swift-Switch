@@ -14,8 +14,10 @@ app = Flask(__name__)
 def query():
     url = request.args.get('url')
     print(url)
-    [a, b, c] = cv_model.query.query(url)
+    print(type(url))
+    [[a, b, c]] = cv_model.query.query(url)
     return jsonify({"a": a[0], "b":b[0], "c":c[0]})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
+    

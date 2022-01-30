@@ -1,4 +1,4 @@
-import functions
+import cv_model.functions as functions
 import urllib.error
 
 # INPUT_IMAGE_URL = 'https://media1.popsugar-assets.com/files/thumbor/OZTN2C1c-Ur2QoMhOgKGvdJB7iE/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/24/981/n/1922398/shop08XKid/i/Shein-Sequin-Detail-Glitter-Mesh-Wrap-Dress.jpg'
