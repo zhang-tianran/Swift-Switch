@@ -54,14 +54,23 @@ getSource(function(src) {
         var link = document.querySelectorAll(".link");
 
         for (var i=1; i <= num_components; i++) {
-            title[i].innerHTML += (response.[i+title]);
-            cloth_img[i].src = (response.[i+img]);
-            // ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ response.[i+brand] +'</li>');
-            ul[i].innerHTML += ('<li><b>Brand: </b>'+ response.[i+brand] +'</li>');
-            ul[i].innerHTML += ('<li><b>Price: </b>'+ response.[i+prize] +'</li>');
-            ul[i].innerHTML += ('<li><b>Size: </b>'+ response.[i+size] +'</li>');
-            link[i].href = (response.[i+link]);
+
+        title[i].innerHTML += (response[i+'title']);
+        cloth_img[i].src = (response[i+'img']);
+        // ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ response.[i+brand] +'</li>');
+        ul[i].innerHTML += ('<li><b>Brand: </b>'+ response[i+'brand'] +'</li>');
+        ul[i].innerHTML += ('<li><b>Price: </b>'+ response[i+'prize'] +'</li>');
+        ul[i].innerHTML += ('<li><b>Size: </b>'+ response[i+'size'] +'</li>');
+        link[i].href = (response[i+'link]');
         }
+
+        // title[i].innerHTML += (response[i+'title']);
+        // cloth_img[i].src = (response[i+'img']);
+        // // ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ response.[i+brand] +'</li>');
+        // ul[i].innerHTML += ('<li><b>Brand: </b>'+ response[i+'brand'] +'</li>');
+        // ul[i].innerHTML += ('<li><b>Price: </b>'+ response[i+'prize'] +'</li>');
+        // ul[i].innerHTML += ('<li><b>Size: </b>'+ response[i+'size'] +'</li>');
+        // link[i].href = (response[i+'link]');
 
       }
     };
