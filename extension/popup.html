@@ -7,24 +7,76 @@
   </head>
   <body>
     <h1> We find you second-hand alternatives for the fast fashion items you like! </h1>
+
     <div class="option">
-      <h2> #1: Standard cloth</h2>
+      <h2 class="title"> #1 </h2>
       <div class="option-flex">
         <div class="flex-left">
-          <img class="cloth-img" id="load"></img>
+          <img class="cloth-img" src=""></img>
         </div>
         <div class="flex-right">
-          <ul>
-            <li><b>Price: </b> $26.00</li>
-            <li><b>Size: </b> M</li>
+          <ul class="info">
           </ul>
         </div>
       </div>
-      <a href="http://www.example.com" target="_blank"><button class="get" id="btn">Get the item</button></a>
-      <!-- <button id="myButton">Click me</button> -->
-      <p id="err"></p>
-      <script src="popup.js"></script>
-      <script src="run_model.js"></script>
+      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
     </div>
+
+    <div class="option">
+      <h2 class="title"> #2 </h2>
+      <div class="option-flex">
+        <div class="flex-left">
+          <img class="cloth-img" src=""></img>
+        </div>
+        <div class="flex-right">
+          <ul class="info">
+          </ul>
+        </div>
+      </div>
+      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
+    </div>
+
+    <div class="option">
+      <h2 class="title"> #3 </h2>
+      <div class="option-flex">
+        <div class="flex-left">
+          <img class="cloth-img" src=""></img>
+        </div>
+        <div class="flex-right">
+          <ul class="info">
+          </ul>
+        </div>
+      </div>
+      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
+    </div>
+
+    <script>
+      var title = document.querySelectorAll(".title");
+      for (var i=0; i < title.length; i++) {
+          title[i].innerHTML += ('hi');
+      }
+
+      var cloth_img = document.querySelectorAll(".cloth-img");
+      for (var i=0; i < cloth_img.length; i++) {
+          cloth_img[i].src = "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg";
+      }
+
+      var ul = document.querySelectorAll(".info");
+      for (var i=0; i < ul.length; i++) {
+        ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ 'thredup' +'</li>');
+        ul[i].innerHTML += ('<li><b>Brand: </b>'+ 'Zara' +'</li>');
+        ul[i].innerHTML += ('<li><b>Price: </b>'+ '$20' +'</li>');
+        ul[i].innerHTML += ('<li><b>Size: </b>'+ 'M' +'</li>');
+      }
+
+      var link = document.querySelectorAll(".link");
+      for (var i=0; i < link.length; i++) {
+          link[i].href = 'example.com';
+      }
+
+    </script>
+
+    <script src="popup.js"></script>
+    <script src="run_model.js"></script>
   </body>
 </html>
