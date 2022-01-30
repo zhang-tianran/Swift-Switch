@@ -32,6 +32,12 @@ function getSource(callback) {
   });
 }
 
+const setVisible = (elementOrSelector, visible) => 
+  (typeof elementOrSelector === 'string'
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector
+  ).style.display = visible ? 'block' : 'none';
+
 // function countDivs() {
 //   countTags("div", function(num) {
 //       console.log("Found %i divs", num);
@@ -41,6 +47,8 @@ function getSource(callback) {
 // document.getElementById("myButton").addEventListener("click", countDivs);
 // countDivs();
 getSource(function(src) {
+    setVisible('.page', false);
+    setVisible('#loading', true);
     console.log("Image source", src);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -71,6 +79,10 @@ getSource(function(src) {
         // ul[i].innerHTML += ('<li><b>Price: </b>'+ response[i+'prize'] +'</li>');
         // ul[i].innerHTML += ('<li><b>Size: </b>'+ response[i+'size'] +'</li>');
         // link[i].href = (response[i+'link]');
+
+
+        setVisible('.page', true);
+        setVisible('#loading', false);
 
       }
     };

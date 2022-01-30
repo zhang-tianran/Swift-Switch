@@ -11,7 +11,7 @@ setVisible('.page', false);
 setVisible('#loading', true);
 
 document.addEventListener('DOMContentLoaded', () =>
-    wait(1000).then(() => {
+    wait(5000).then(() => {
     setVisible('.page', true);
     setVisible('#loading', false);
 }));
