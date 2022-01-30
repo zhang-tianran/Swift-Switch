@@ -57,5 +57,4 @@ getSource(function(src) {
     url = "http://0.0.0.0:80/" + "query?url=" + src
     xhttp.open("GET", url, true);
     xhttp.send();
-    document.getElementById("err").innerHTML = url;
 });

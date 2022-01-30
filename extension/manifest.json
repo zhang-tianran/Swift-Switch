@@ -9,7 +9,7 @@
     "activeTab"
   ],
   "browser_action": {
-    "default_popup": "popup_demo.html"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
       {
