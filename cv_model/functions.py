@@ -5,9 +5,8 @@ from PIL import Image
 import urllib.request
 import pickle
 
-
-DB_EMBEDS = "cv-model/db_embeddings.txt"
-DB_LIST = "cv-model/db_pickled.txt"
+DB_EMBEDS = "cv_model/db_embeddings.txt"
+DB_LIST = "cv_model/db_pickled.txt"
 
 def convert_image_to_numpy(url: str):
     urllib.request.urlretrieve(url, 'temp.jpg')
