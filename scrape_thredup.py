@@ -24,7 +24,7 @@ def get_pages(driver, URL):
 
     return urls
 
-def get_size_price(url):
+def get_size_price_brand(url):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
@@ -35,12 +35,14 @@ def get_size_price(url):
     # price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].get_attribute('innerHTML')
     size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].text
     price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].text
+    brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
     driver.quit()
-    print(size)
-    print(price)
-    return size, price
+    # print(size)
+    # print(price)
+    # print(brand)
+    return size, price, brand
 
-get_size_price("https://www.thredup.com/product/women-cotton-st-johns-bay-brown-long-sleeve-t-shirt/115572825?query_id=600668285909860352&result_id=600668287331729408")
+get_size_price_brand("https://www.thredup.com/product/women-cotton-st-johns-bay-brown-long-sleeve-t-shirt/115572825?query_id=600668285909860352&result_id=600668287331729408")
 
 # if __name__ == "__main__":
 #     options = webdriver.ChromeOptions()
