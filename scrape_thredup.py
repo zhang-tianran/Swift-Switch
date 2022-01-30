@@ -43,10 +43,15 @@ def get_size_price_brand(url):
     return size, price, brand, title
 
 def add_db_details(db_filepath: str)
-    url_list = functions.load_db_list()
+    url_list = cv_model.functions.load_db_list()
 
-    for (url, img) in url_list:
-        pass
+    with open('products/db_details.txt', 'w') as f:
+        for (i, entry) in enumerate(url_list):
+            tuple = get_size_price_brand(entry[0])
+            url_list[i].extend(tuple)
+        csv.writer(f, delimiter=',').writerows(url_img_src)
+
+        
 
 # if __name__ == "__main__":
 #     options = webdriver.ChromeOptions()
