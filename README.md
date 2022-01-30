@@ -1,6 +1,6 @@
 # Thrift Switch
 
-An Google extention eveloped by Swiggies to sustainable alternative of clothes from thrift stores. 
+An Google extention developed by the Swiggies to sustainable alternative of clothes from thrift stores. 
 
 --------------------------------------------------------------------------------------------------
 
@@ -25,3 +25,6 @@ We learned how to make a Chrome extension and how to apply the knowledge of deep
 
 ## What's next for Good
 We trained our model using data from only one online thrift store, so the number of choices is somewhat limited. Also, it takes a relatively long time for the extension to generate recommendations. However, we do see our product as an expandable model. It is possible to build a larger database with more online thrift shops or even convince local thrift stores to upload their inventory. That way, we would have a larger range of choices and even more similar items. Besides, with more time, we could also speed up the recommendation-generation process by having a pre-indexed database. 
+
+### Why are we called the Swiggies
+This project cost us 22 hours in the CIT's Swig Boardroom (not including the time we slept) (also during a blizzard).
