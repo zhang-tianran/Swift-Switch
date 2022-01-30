@@ -14,8 +14,28 @@ app = Flask(__name__)
 @app.route("/query")
 def query():
     url = request.args.get('url')
-    print(url)
-    print(type(url))
+    # (a_size, a_price, a_brand, a_title) = (1, 2, 3, 4)
+    # (b_size, b_price, b_brand, b_title) = (1, 2, 3, 4)
+    # (c_size, c_price, c_brand, c_title) = (1, 2, 3, 4)
+    # return jsonify(
+    #     {"1link": "https://www.gap.com/webcontent/0018/528/146/cn18528146.jpg",
+    #     "1img": "HI",
+    #     "1size": a_size, 
+    #     "1price": a_price, 
+    #     "1brand": a_brand,
+    #     "1title": a_title,
+    #     "2link": "hi",
+    #     "2img": "https://www.gap.com/webcontent/0018/528/146/cn18528146.jpg",
+    #     "2size": b_size, 
+    #     "2price": b_price, 
+    #     "2brand": b_brand,
+    #     "2title": b_title,  
+    #     "3link": "hi",
+    #     "3img": "https://www.gap.com/webcontent/0018/528/146/cn18528146.jpg",
+    #     "3size": c_size, 
+    #     "3price": c_price, 
+    #     "3brand": c_brand,
+    #     "3title": c_title})
     [[a, b, c]] = cv_model.query.query(url)
     (a_size, a_price, a_brand, a_title) = scrape_thredup.get_size_price_brand(a[0])
     (b_size, b_price, b_brand, b_title) = scrape_thredup.get_size_price_brand(b[0])

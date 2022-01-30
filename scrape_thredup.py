@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 # import numpy as np
 import csv
+import cv_model.functions
 
 # page = requests.get(URL)
 # soup = BeautifulSoup(page.content, "html.parser")
@@ -38,7 +39,14 @@ def get_size_price_brand(url):
     brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
     title = driver.find_elements(By.XPATH, '//span[@class = "wc1Wg5BbXVFBe4MHxY3r"]')[0].text
     driver.quit()
+    type(price)
     return size, price, brand, title
+
+def add_db_details(db_filepath: str)
+    url_list = functions.load_db_list()
+
+    for (url, img) in url_list:
+        pass
 
 # if __name__ == "__main__":
 #     options = webdriver.ChromeOptions()
