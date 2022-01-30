@@ -22,7 +22,8 @@
 
 function getSource(callback) {
   chrome.tabs.executeScript({
-      code: "document.querySelector('div.product-detail-main-image-container img').src"
+      // code: "document.querySelector('div.product-detail-main-image-container img').src"
+      code: "document.querySelector('img.media-source').src"
   }, function(result) {
       if (chrome.runtime.lastError) {
           console.error(chrome.runtime.lastError);
