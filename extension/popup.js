@@ -41,7 +41,7 @@ function getSource(callback) {
 // document.getElementById("myButton").addEventListener("click", countDivs);
 // countDivs();
 getSource(function(src) {
-    // console.log("Image source", src);
+    console.log("Image source", src);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -49,10 +49,12 @@ getSource(function(src) {
         let url1 = response.a;
         let url2 = response.b;
         let url3 = response.c;
+        document.getElementById("url1").href = url1;
       }
     };
     // TODO: fill in url
-    url = "127.0.0.1"
-    xhttp.open("GET", url + "/query?url=" + src, true);
+    url = "127.0.0.1" + "/query?url=" + src
+    xhttp.open("GET", url, true);
     xhttp.send();
+    document.getElementById("err").innerHTML = url;
 });
