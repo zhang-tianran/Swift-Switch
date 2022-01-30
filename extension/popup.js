@@ -41,5 +41,18 @@ function getSource(callback) {
 // document.getElementById("myButton").addEventListener("click", countDivs);
 // countDivs();
 getSource(function(src) {
-    console.log("Image source", src);
+    // console.log("Image source", src);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        const response = JSON.parse(this.responseText);
+        let url1 = response.a;
+        let url2 = response.b;
+        let url3 = response.c;
+      }
+    };
+    // TODO: fill in url
+    url = "127.0.0.1"
+    xhttp.open("GET", url + "/query?url=" + src, true);
+    xhttp.send();
 });
