@@ -32,7 +32,7 @@ function getSource(callback) {
   });
 }
 
-const setVisible = (elementOrSelector, visible) => 
+const setVisible = (elementOrSelector, visible) =>
   (typeof elementOrSelector === 'string'
     ? document.querySelector(elementOrSelector)
     : elementOrSelector
@@ -67,7 +67,7 @@ getSource(function(src) {
         cloth_img[i-1].src = (response[i+'img']);
         // ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ response.[i+brand] +'</li>');
         ul[i-1].innerHTML += ('<li><b>Brand: </b>'+ response[i+'brand'] +'</li>');
-        ul[i-1].innerHTML += ('<li><b>Price: </b>'+ response[i+'prize'] +'</li>');
+        ul[i-1].innerHTML += ('<li><b>Price: </b>'+ response[i+'price'] +'</li>');
         ul[i-1].innerHTML += ('<li><b>Size: </b>'+ response[i+'size'] +'</li>');
         link[i-1].href = (response[i+'link']);
         }

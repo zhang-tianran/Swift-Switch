@@ -25,12 +25,7 @@ def get_pages(driver, URL):
 
     return urls
 
-def get_size_price_brand(url):
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option('useAutomationExtension', False)
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    driver = webdriver.Chrome(options=options)
+def get_size_price_brand(driver, url):
     driver.get(url)
     # size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].get_attribute('innerHTML')
     # price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].get_attribute('innerHTML')
@@ -38,11 +33,10 @@ def get_size_price_brand(url):
     price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].text
     brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
     title = driver.find_elements(By.XPATH, '//span[@class = "wc1Wg5BbXVFBe4MHxY3r"]')[0].text
-    driver.quit()
-    type(price)
+    # type(price)
     return size, price, brand, title
 
-def add_db_details(db_filepath: str)
+def add_db_details(db_filepath: str):
     url_list = cv_model.functions.load_db_list()
 
     with open('products/db_details.txt', 'w') as f:
