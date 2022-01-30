@@ -4,9 +4,10 @@
     <title>Swiggies Google Extention</title>
     <link href="popup.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body >
     <h1> We find you second-hand alternatives for the fast fashion items you like! </h1>
 
+    <div class="page">
     <div class="option">
       <h2 class="title"> #1 </h2>
       <div class="option-flex">
@@ -18,7 +19,7 @@
           </ul>
         </div>
       </div>
-      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
+      <a class="link" target="_blank"><button class="get">Get this item</button></a>
     </div>
 
     <div class="option">
@@ -32,7 +33,7 @@
           </ul>
         </div>
       </div>
-      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
+      <a class="link" target="_blank"><button class="get">Get this item</button></a>
     </div>
 
     <div class="option">
@@ -46,9 +47,13 @@
           </ul>
         </div>
       </div>
-      <a class="link" target="_blank"><button class="get" id="btn">Get this item</button></a>
+      <a class="link" target="_blank"><button class="get">Get this item</button></a>
     </div>
+  </div>
 
+    <div class="loader" id="loading"></div>
+
+    <script src="load.js"></script>
     <script src="select.js"></script>
     <script src="popup.js"></script>
     <script src="run_model.js"></script>
