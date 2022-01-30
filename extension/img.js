@@ -2,7 +2,7 @@
 //     type: "popup"
 // });
 
-// var cur = document.querySelector('.product-detail-main-image-container img[]'); 
+// var cur = document.querySelector('.product-detail-main-image-container img[]');
 
 // for (var i = 0; i < views.length; i++) {
 //     views[i].document.getElementById('load').src = cur.src;
@@ -15,7 +15,6 @@
 //         }
 //     });
 // }
-
 
 // var imgs = document.getElementsByTagName("img");
 // for(var i = 0; i < imgs.length; ++i) {

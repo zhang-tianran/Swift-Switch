@@ -20,6 +20,18 @@ function countTags(tag, callback) {
     });
 }
 
+function getSource(callback) {
+  chrome.tabs.executeScript({
+      code: "document.querySelector('div.product-detail-main-image-container img').src"
+  }, function(result) {
+      if (chrome.runtime.lastError) {
+          console.error(chrome.runtime.lastError);
+      } else {
+          callback(result[0]);
+      }
+  });
+}
+
 function countDivs() {
   countTags("div", function(num) {
       console.log("Found %i divs", num);
@@ -27,3 +39,7 @@ function countDivs() {
 }
 
 document.getElementById("myButton").addEventListener("click", countDivs);
+// countDivs();
+getSource(function(src) {
+    console.log("Image source", src);
+});
