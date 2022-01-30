@@ -1,4 +1,3 @@
 # Thrift Switch
 
-Developed by Swiggies
-Providing sustainable alternative of clothes from thrift stores. 
+An Google extention eveloped by Swiggies to sustainable alternative of clothes from thrift stores. 
