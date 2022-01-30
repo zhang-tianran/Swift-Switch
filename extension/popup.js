@@ -22,8 +22,7 @@
 
 function getSource(callback) {
   chrome.tabs.executeScript({
-      // code: "document.querySelector('div.product-detail-main-image-container img').src"
-      code: "document.querySelector('img.media-source').src"
+      code: "document.querySelector('#product > div.l--sticky-wrapper.pdp-mfe-dd4axt > div.l--breadcrumb-photo-wrapper.pdp-mfe-dkc8kg > div:nth-child(2) > div.pdp-mfe-11qso3a > div > div:nth-last-child(1) > div > a').href"
   }, function(result) {
       if (chrome.runtime.lastError) {
           console.error(chrome.runtime.lastError);
@@ -57,5 +56,4 @@ getSource(function(src) {
     url = "http://0.0.0.0:80/" + "query?url=" + src
     xhttp.open("GET", url, true);
     xhttp.send();
-    document.getElementById("err").innerHTML = url;
 });
