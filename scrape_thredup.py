@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 # import numpy as np
 import csv
 import cv_model.functions
+from tqdm import tqdm
 
 # page = requests.get(URL)
 # soup = BeautifulSoup(page.content, "html.parser")
@@ -39,21 +40,37 @@ def get_size_price_brand(url):
     brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
     title = driver.find_elements(By.XPATH, '//span[@class = "wc1Wg5BbXVFBe4MHxY3r"]')[0].text
     driver.quit()
-    type(price)
     return size, price, brand, title
 
-def add_db_details(db_filepath: str)
+def get_size_price_brand_with_driver(driver, url):
+    driver.get(url)
+    # size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].get_attribute('innerHTML')
+    # price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].get_attribute('innerHTML')
+    size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].text
+    price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].text
+    brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
+    title = driver.find_elements(By.XPATH, '//span[@class = "wc1Wg5BbXVFBe4MHxY3r"]')[0].text
+    return size, price, brand, title
+
+def add_db_details():
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    driver = webdriver.Chrome(options=options)
+
     url_list = cv_model.functions.load_db_list()
 
-    with open('products/db_details.txt', 'w') as f:
-        for (i, entry) in enumerate(url_list):
-            tuple = get_size_price_brand(entry[0])
-            url_list[i].extend(tuple)
-        csv.writer(f, delimiter=',').writerows(url_img_src)
+    with open('products/db_details_2.txt', 'a') as f:
+        for (i, entry) in tqdm(enumerate(url_list[500:])):
+            target_list = list(url_list[i])
+            tuple = get_size_price_brand_with_driver(driver, entry[0])
+            target_list.extend(tuple)
+            csv.writer(f, delimiter=',').writerow(target_list)
+    driver.quit()
 
-        
-
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    add_db_details()
 #     options = webdriver.ChromeOptions()
 #     options.add_experimental_option("excludeSwitches", ["enable-automation"])
 #     options.add_experimental_option('useAutomationExtension', False)
