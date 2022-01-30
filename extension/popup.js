@@ -8,17 +8,17 @@
 //   }
 // );
 
-function countTags(tag, callback) {
-    chrome.tabs.executeScript({
-        code: "document.getElementsByTagName('" + tag + "').length"
-    }, function(result) {
-        if (chrome.runtime.lastError) {
-            console.error(chrome.runtime.lastError);
-        } else {
-            callback(result[0]);
-        }
-    });
-}
+// function countTags(tag, callback) {
+//     chrome.tabs.executeScript({
+//         code: "document.getElementsByTagName('" + tag + "').length"
+//     }, function(result) {
+//         if (chrome.runtime.lastError) {
+//             console.error(chrome.runtime.lastError);
+//         } else {
+//             callback(result[0]);
+//         }
+//     });
+// }
 
 function getSource(callback) {
   chrome.tabs.executeScript({
@@ -32,13 +32,13 @@ function getSource(callback) {
   });
 }
 
-function countDivs() {
-  countTags("div", function(num) {
-      console.log("Found %i divs", num);
-  });
-}
+// function countDivs() {
+//   countTags("div", function(num) {
+//       console.log("Found %i divs", num);
+//   });
+// }
 
-document.getElementById("myButton").addEventListener("click", countDivs);
+// document.getElementById("myButton").addEventListener("click", countDivs);
 // countDivs();
 getSource(function(src) {
     console.log("Image source", src);
