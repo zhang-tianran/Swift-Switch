@@ -2,3 +2,4 @@ env/
 temp.jpg
 
 __pycache__/
+.idea/
