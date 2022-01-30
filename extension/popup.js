@@ -46,10 +46,23 @@ getSource(function(src) {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(this.responseText);
-        let url1 = response.a;
-        let url2 = response.b;
-        let url3 = response.c;
-        document.getElementById("url1").href = url1;
+
+        var num_components = 3;
+        var title = document.querySelectorAll(".title");
+        var cloth_img = document.querySelectorAll(".cloth-img");
+        var ul = document.querySelectorAll(".info");
+        var link = document.querySelectorAll(".link");
+
+        for (var i=1; i <= num_components; i++) {
+            title[i].innerHTML += (response.[i+title]);
+            cloth_img[i].src = (response.[i+img]);
+            // ul[i].innerHTML += ('<li><b>Thrift platform: </b>'+ response.[i+brand] +'</li>');
+            ul[i].innerHTML += ('<li><b>Brand: </b>'+ response.[i+brand] +'</li>');
+            ul[i].innerHTML += ('<li><b>Price: </b>'+ response.[i+prize] +'</li>');
+            ul[i].innerHTML += ('<li><b>Size: </b>'+ response.[i+size] +'</li>');
+            link[i].href = (response.[i+link]);
+        }
+
       }
     };
     // TODO: fill in url
