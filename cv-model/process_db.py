@@ -1,0 +1,35 @@
+from sklearn.neighbors import NearestNeighbors
+import tensorflow as tf
+import numpy as np
+import functions
+from tqdm import tqdm
+import pickle
+
+DB_FILEPATH = "db1.txt"
+
+def read_db(filepath: str) -> list:
+    db_list = []
+    with open(filepath, "r") as f:
+        for line in f.readlines():
+            db_list.append(line.replace('\n','').split(','))
+    
+    return db_list
+
+def build_db_embeddings(model: tf.keras.Model, db: list, filepath: str) -> None:
+    db_list = []
+    for entry in tqdm(db):
+        db_list.append(functions.get_embeddings(model, tf.expand_dims(functions.convert_image_to_numpy(entry[1]), 0)))
+
+    with open(filepath, 'wb') as fh:
+        pickle.dump(db_list, fh)
+
+def pickle_db_list(db: list):
+    with open('db_pickled.txt', 'wb') as fh:
+        pickle.dump(db, fh)
+
+if __name__ == '__main__':
+    
+    pickle_db_list(read_db(DB_FILEPATH))
+    model = functions.init_model()
+    build_db_embeddings(model, read_db(DB_FILEPATH), 'cv-model/db-embeddings.txt')
+

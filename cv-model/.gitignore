@@ -1,0 +1,10 @@
+env/
+.DS_Store
+model-data/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+model.py
