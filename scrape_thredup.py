@@ -36,13 +36,9 @@ def get_size_price_brand(url):
     size = driver.find_elements(By.XPATH, '//div[@class="P9j6cGJ6kvC9bBgLk4pE"]')[0].text
     price = driver.find_elements(By.XPATH, '//span[@class="u-text-20 u-font-bold u-text-alert price"]')[0].text
     brand = driver.find_elements(By.XPATH, '//a[@class="ui-link u-text-20"]')[0].get_attribute('title')
+    title = driver.find_elements(By.XPATH, '//span[@class = "wc1Wg5BbXVFBe4MHxY3r"]')[0].text
     driver.quit()
-    # print(size)
-    # print(price)
-    # print(brand)
-    return size, price, brand
-
-get_size_price_brand("https://www.thredup.com/product/women-cotton-st-johns-bay-brown-long-sleeve-t-shirt/115572825?query_id=600668285909860352&result_id=600668287331729408")
+    return size, price, brand, title
 
 # if __name__ == "__main__":
 #     options = webdriver.ChromeOptions()
