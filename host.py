@@ -17,6 +17,7 @@ def query():
     print(type(url))
     [[a, b, c]] = cv_model.query.query(url)
     return jsonify({"a": a[0], "b":b[0], "c":c[0]})
+    # TODO: return 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
