@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Swiggies extention",
+    "description": "Sustainable alternative of clothes",
+    "version": "1.1",
+    "background": {"scripts":["background.js"]},
+    "permissions": ["storage", "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+}
