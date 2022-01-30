@@ -4,8 +4,8 @@ import functions
 from tqdm import tqdm
 import pickle
 
-END = 200
-DB_FILEPATH = "../products/db_all.txt"
+END = 400
+DB_FILEPATH = "products/db_all.txt"
 
 def read_db(filepath: str) -> list:
     db_list = []
@@ -17,7 +17,7 @@ def read_db(filepath: str) -> list:
 
 def build_db_embeddings(model: tf.keras.Model, db: list, filepath: str) -> None:
     db_list = []
-    for entry in tqdm(db[0:END]):
+    for entry in tqdm(db[200:END]):
         db_list.append(functions.get_embeddings(model, functions.convert_image_to_numpy(entry[1])))
 
     with open(filepath, 'wb') as fh:
