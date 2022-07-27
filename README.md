@@ -1,9 +1,8 @@
 # Thrift Switch
-
-An Google extention developed by the Swiggies to sustainable alternative of clothes from thrift stores. 
-
---------------------------------------------------------------------------------------------------
-![thumbnail](https://i.imgur.com/MridKNZ.png)
+ 
+*Submitted to Hack@Brown 2022, winner of the Best Overall Hack prize.*
+## Checkout our demo!
+[![Checkout demo!](https://i.imgur.com/MridKNZ.png)](https://youtu.be/VQEP_3H_GXc)
 
 ## Inspiration
 A lot of research suggests that the fast fashion industry is a main contributor to climate change. In comparison, buying secondhand clothes is a more sustainable alternative, since it reduces the demand for new clothes. However, the appeal of fast fashion is still very strong because it tends to look more stylish. Therefore, we decided to design a chrome extension that offers our users more sustainable alternatives when they’re shopping on fast fashion sites.
